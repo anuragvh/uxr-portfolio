@@ -1,3 +1,6 @@
+// Prefix public assets with the deploy base path (needed for plain <img> tags on GitHub Pages).
+const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`
+
 export type ProjectStatus = "development" | "launched" | "healthcare" | "research"
 
 export type ProjectMedia =
@@ -24,7 +27,7 @@ export const profile = {
   location: "Indianapolis, USA",
   timeZone: "America/Indiana/Indianapolis",
   linkedin: "https://www.linkedin.com/in/anuragvh",
-  avatar: "/images/avatar.png",
+  avatar: asset("/images/avatar.png"),
   roles: [
     { title: "Healthcare Design Researcher @", org: "Elevance (Contract)" },
     { title: "Co-Founder & Design Engineer @", org: "Loading" },
@@ -47,7 +50,7 @@ export const projects: Project[] = [
     industry: "Healthcare Insurance",
     media: {
       kind: "logos",
-      logos: ["/images/elevance-logo.png", "/images/ust-logo.png"],
+      logos: [asset("/images/elevance-logo.png"), asset("/images/ust-logo.png")],
     },
   },
   {
@@ -64,12 +67,12 @@ export const projects: Project[] = [
     industry: "Sports & Media",
     media: {
       kind: "phones",
-      background: "/images/phone-bg.png",
+      background: asset("/images/phone-bg.png"),
       screens: [
-        "/images/ms1-1.png",
-        "/images/ms1-2.png",
-        "/images/ms1-3.png",
-        "/images/ms1-4.png",
+        asset("/images/ms1-1.png"),
+        asset("/images/ms1-2.png"),
+        asset("/images/ms1-3.png"),
+        asset("/images/ms1-4.png"),
       ],
     },
   },
@@ -89,7 +92,7 @@ export const projects: Project[] = [
     industry: "Healthcare & Medical Services",
     media: {
       kind: "image",
-      src: "/images/hospital-home.png",
+      src: asset("/images/hospital-home.png"),
       alt: "Illustration of an adult hand holding a child's hand",
     },
   },
@@ -108,7 +111,7 @@ export const projects: Project[] = [
     industry: "Healthcare & Medical Services",
     media: {
       kind: "image",
-      src: "/images/eae-hub.png",
+      src: asset("/images/eae-hub.png"),
       alt: "EAE Training Hub platform",
     },
   },
@@ -127,7 +130,7 @@ export const projects: Project[] = [
     industry: "Healthcare & Medical Services",
     media: {
       kind: "image",
-      src: "/images/spina-bifida.png",
+      src: asset("/images/spina-bifida.png"),
       alt: "Diagram explaining types of Spina Bifida",
     },
   },
@@ -146,11 +149,11 @@ export const projects: Project[] = [
     industry: "Sports & Marketing UX",
     media: {
       kind: "phones",
-      background: "/images/phone-bg.png",
+      background: asset("/images/phone-bg.png"),
       screens: [
-        "/images/indycar-1.png",
-        "/images/indycar-2.png",
-        "/images/indycar-3.png",
+        asset("/images/indycar-1.png"),
+        asset("/images/indycar-2.png"),
+        asset("/images/indycar-3.png"),
       ],
     },
   },
@@ -169,7 +172,7 @@ export const projects: Project[] = [
     industry: "Security SAAS",
     media: {
       kind: "image",
-      src: "/images/lt-annotation.jpeg",
+      src: asset("/images/lt-annotation.jpeg"),
       alt: "Illustration of security cameras monitoring a city block",
     },
   },
