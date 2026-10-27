@@ -5,6 +5,9 @@ const isProd = process.env.NODE_ENV === "production";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? (isProd ? "/uxr-portfolio" : "");
 
 const nextConfig: NextConfig = {
+  experimental: {
+    agentUpgrade: "security",
+  },
   output: "export",
   basePath,
   assetPrefix: basePath || undefined,
