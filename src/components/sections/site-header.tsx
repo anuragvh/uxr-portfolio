@@ -1,10 +1,10 @@
 "use client"
 
 import { useSyncExternalStore } from "react"
-import { Clock, MapPin } from "lucide-react"
+import { Clock, MapPin, SunMoon } from "lucide-react"
+import { useTheme } from "next-themes"
 
 import { LinkedInIcon } from "@/components/icons"
-import { Marquee } from "@/components/ui/marquee"
 import { ScrollProgress } from "@/components/ui/scroll-progress"
 import { profile } from "@/lib/data"
 
@@ -27,27 +27,26 @@ function useLocalTime(timeZone: string) {
 }
 
 const pill =
-  "flex h-7 items-center gap-1.5 rounded-md border border-white/10 bg-white/[0.06] px-2.5 text-xs text-neutral-300"
+  "flex h-7 items-center justify-center gap-1.5 rounded-md border border-white/10 bg-white/[0.06] px-2.5 text-xs text-neutral-300"
 
 export function SiteHeader() {
   const time = useLocalTime(profile.timeZone)
+  const { setTheme, theme } = useTheme()
 
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-black/70 backdrop-blur-md">
       <ScrollProgress className="top-auto bottom-0" />
       <div className="mx-auto flex h-14 max-w-6xl items-center gap-4 px-4 md:px-6">
-        <a href="#top" className="font-serif text-2xl tracking-tight text-white">
+        <a href="#top" className="font-hand text-3xl tracking-tight text-white">
           {profile.name}
         </a>
 
         <div className="flex min-w-0 items-center gap-2">
           <div className={`${pill} w-28 overflow-hidden px-0`}>
-            <Marquee className="p-0 [--duration:8s] [--gap:0.75rem]" repeat={3}>
-              <span className="flex items-center gap-1.5">
-                <span className="size-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px] shadow-emerald-400" />
-                Open to work
-              </span>
-            </Marquee>
+            <span className="flex items-center justify-center gap-1.5 whitespace-nowrap">
+              <span className="size-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px] shadow-emerald-400" />
+              Open to work
+            </span>
           </div>
           <div className={`${pill} hidden sm:flex`}>
             <Clock className="size-3.5" />
@@ -75,6 +74,15 @@ export function SiteHeader() {
           >
             <LinkedInIcon className="size-4" />
           </a>
+          <button
+            type="button"
+            aria-label="Toggle light and dark theme"
+            title="Toggle light and dark theme"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="flex size-8 items-center justify-center rounded-md border border-white/10 bg-white/[0.06] text-neutral-300 transition-colors hover:text-white"
+          >
+            <SunMoon className="size-4" />
+          </button>
         </nav>
       </div>
     </header>

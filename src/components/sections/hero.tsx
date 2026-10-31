@@ -1,68 +1,51 @@
-import { ArrowRight } from "lucide-react"
+import Image from "next/image"
 
-import { BlurFade } from "@/components/ui/blur-fade"
-import { DotPattern } from "@/components/ui/dot-pattern"
-import { TextAnimate } from "@/components/ui/text-animate"
-import { cn } from "@/lib/utils"
 import { profile } from "@/lib/data"
 
 export function Hero() {
-  return (
-    <section id="top" className="relative overflow-hidden pt-36 pb-20 md:pt-44">
-      <DotPattern
-        width={22}
-        height={22}
-        className={cn(
-          "text-white/15",
-          "[mask-image:radial-gradient(520px_circle_at_20%_30%,white,transparent)]"
-        )}
-      />
+  const currentRole = profile.roles[0]
 
-      <div className="relative mx-auto max-w-6xl px-4 md:px-6">
-        <BlurFade delay={0.05}>
-          <div className="flex items-center gap-5">
-            <h2 className="font-hand text-5xl text-[#4C8DFF] md:text-6xl">
-              Hi :) I&apos;m {profile.name}
-            </h2>
-            <img
+  return (
+    <section id="top" className="mx-auto max-w-6xl px-4 pt-28 pb-12 md:px-6 md:pt-36">
+      <div className="grid gap-6 md:grid-cols-[auto_minmax(0,1fr)] md:gap-10">
+        <div className="relative flex min-h-56 items-start justify-start rounded-2xl bg-black md:min-h-[240px]">
+          <div className="relative size-[188px]">
+            <Image
               src={profile.avatar}
-              alt="Portrait of Anurag"
-              className="size-16 rounded-full border-2 border-white object-cover md:size-20"
+              alt={`Portrait of ${profile.fullName}`}
+              width={188}
+              height={188}
+              unoptimized
+              className="size-[188px] rounded-full object-cover"
+            />
+            <span
+              aria-label="Open to work"
+              className="absolute right-[18px] bottom-[22px] z-10 size-[22px] translate-x-1/4 translate-y-1/4 rounded-full border-8 border-black bg-emerald-400 md:right-[15.5px] md:size-11"
             />
           </div>
-        </BlurFade>
+        </div>
 
-        <h1 className="mt-4 text-5xl leading-[1.1] font-medium tracking-tight text-white md:text-7xl">
-          <TextAnimate animation="blurInUp" by="word" delay={0.15} as="span" className="block">
-            UX Designer,
-          </TextAnimate>
-          <TextAnimate animation="blurInUp" by="word" delay={0.3} as="span" className="block">
-            Researcher &amp; Engineer
-          </TextAnimate>
-        </h1>
+        <div className="flex flex-col">
+          <h1 className="font-hand text-5xl leading-[0.9] tracking-wide text-white md:text-6xl">
+            {profile.fullName}
+          </h1>
+          <p className="mt-0.5 text-base text-neutral-500">UX Researcher</p>
 
-        <div className="mt-14 grid gap-10 md:grid-cols-2">
-          <BlurFade delay={0.45}>
-            <p className="max-w-sm text-base leading-relaxed text-neutral-300">
-              <span className="font-semibold text-white">6 years</span> of experience across UX
-              Research &amp; Design -&gt; UI Development in Healthcare, Sports &amp; Media,
-              Logistics &amp; AI Technologies
-            </p>
-          </BlurFade>
+          <p className="mt-6 text-sm leading-relaxed text-neutral-400 sm:text-base">
+            <span className="lg:block">
+              I&apos;m an HCI-trained UX researcher with hands-on experience in design and
+              engineering.
+            </span>{" "}
+            <span className="lg:block">
+              Based in {profile.location}, I help teams turn complex product questions into
+              evidence-backed decisions 🔎
+            </span>
+          </p>
 
-          <ul className="space-y-4">
-            {profile.roles.map((role, i) => (
-              <BlurFade key={role.title} delay={0.55 + i * 0.1}>
-                <li className="flex gap-3">
-                  <ArrowRight className="mt-0.5 size-4 shrink-0 text-neutral-300" />
-                  <div>
-                    <p className="font-medium text-white">{role.title}</p>
-                    <p className="text-sm text-neutral-400">{role.org}</p>
-                  </div>
-                </li>
-              </BlurFade>
-            ))}
-          </ul>
+          <div className="mt-8">
+            <p className="text-sm font-medium text-white">{currentRole.title}</p>
+            <p className="mt-1 text-sm text-neutral-500">{currentRole.org}</p>
+          </div>
         </div>
       </div>
     </section>

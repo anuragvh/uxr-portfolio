@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   env: { NEXT_PUBLIC_BASE_PATH: basePath },
   turbopack: {
+    root: process.cwd(),
     rules: {
       "*.css": {
         loaders: ["@tailwindcss/turbopack"],

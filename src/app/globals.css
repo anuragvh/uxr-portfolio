@@ -177,3 +177,97 @@
     @apply font-sans;
   }
 }
+
+html.light body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+html.light [class~="bg-black"] {
+  background-color: #fff;
+}
+
+html.light [class~="bg-black/70"] {
+  background-color: rgb(255 255 255 / 82%);
+}
+
+html.light [class~="bg-neutral-950"] {
+  background-color: #f5f5f5;
+}
+
+html.light [class~="text-white"] {
+  color: #171717;
+}
+
+html.light [class~="text-neutral-200"] {
+  color: #262626;
+}
+
+html.light [class~="text-neutral-300"] {
+  color: #404040;
+}
+
+html.light [class~="text-neutral-400"] {
+  color: #525252;
+}
+
+html.light [class~="text-neutral-500"] {
+  color: #737373;
+}
+
+html.light [class~="border-white/10"] {
+  border-color: rgb(0 0 0 / 10%);
+}
+
+html.light [class~="border-black"] {
+  border-color: #fff;
+}
+
+html.light [class~="bg-white/[0.06]"] {
+  background-color: rgb(0 0 0 / 4%);
+}
+
+html.light [class~="bg-white/[0.04]"] {
+  background-color: rgb(0 0 0 / 3%);
+}
+
+.contact-section__backdrop {
+  background: linear-gradient(
+    to bottom,
+    rgb(13 15 36 / 10%) 0%,
+    rgb(13 15 36 / 20%) 18%,
+    rgb(13 15 36 / 38%) 42%,
+    rgb(10 11 27 / 74%) 68%,
+    #080912 88%,
+    #080912 100%
+  );
+}
+
+html.light .contact-section__backdrop {
+  background: none;
+}
+
+.contact-scene__shade {
+  background: linear-gradient(
+    to bottom,
+    rgb(9 10 24 / 22%) 0%,
+    rgb(9 10 24 / 34%) 72%,
+    rgb(7 8 18 / 58%) 100%
+  );
+}
+
+html.light .contact-section [class~="text-neutral-500"] {
+  color: #737373;
+}
+
+html.light .contact-section h2 {
+  color: #fff;
+}
+
+html.light .contact-section [class~="border-white/10"] {
+  border-color: rgb(255 255 255 / 10%);
+}
+
+html.light .contact-section [class~="text-white"] {
+  color: #fff;
+}

@@ -1,5 +1,5 @@
 // Prefix public assets with the deploy base path (needed for plain <img> tags on GitHub Pages).
-const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`
+export const asset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`
 
 export type ProjectStatus = "development" | "launched" | "healthcare" | "research"
 
@@ -24,12 +24,12 @@ export interface Project {
 export const profile = {
   name: "Anurag",
   fullName: "Anurag Harishchandrakar",
-  location: "Indianapolis, USA",
-  timeZone: "America/Indiana/Indianapolis",
+  location: "Boston, USA",
+  timeZone: "America/New_York",
   linkedin: "https://www.linkedin.com/in/anuragvh",
   avatar: asset("/images/avatar.png"),
   roles: [
-    { title: "Healthcare Design Researcher @", org: "Elevance (Contract)" },
+    { title: "Design Researcher @ UST", org: "Elevance Health (Contract)" },
     { title: "Co-Founder & Design Engineer @", org: "Loading" },
   ],
 }
@@ -181,44 +181,6 @@ export const projects: Project[] = [
 export const about = {
   intro: "I’m a UX Researcher with a foundation in Front-End Engineering.",
   blocks: [
-    "I built SaaS products on Angular JS & MEAN stack before transitioning into UX. My shift was driven by a desire to gain deeper product intuition and to craft experiences grounded in user-centric research.",
-    "Currently, I work in healthcare UX, enabling patient and provider-focused research to identify and address systemic challenges in health care delivery for diverse patient groups.",
-    "I’m also co-founding a design and product studio, where I craft out passion projects.",
+    "I started my career as a Front-End Engineer, building web applications and SaaS products on Angular JS & MEAN stack.\nMy transition into UX was driven by a desire to gain deeper product intuition and to craft experiences grounded in user-centric research.",
   ],
 }
-
-export const skills = [
-  {
-    title: "Web UI Design",
-    icon: "web",
-    items: ["Websites", "Landing Pages", "SPA Web Apps"],
-  },
-  {
-    title: "Mobile UI Design",
-    icon: "mobile",
-    items: ["Dashboards", "Mobile Apps", "Product Strategy", "Growth Design"],
-  },
-  {
-    title: "UX Research",
-    icon: "research",
-    items: [
-      "User Interviews",
-      "Focus Groups",
-      "Competitive Analysis",
-      "Journey Maps",
-      "Service Maps",
-      "Market Research",
-      "Heuristic Evaluation",
-      "Accessibility (WCAG) Guidelines",
-      "Quantitative and Qualitative Analysis",
-      "Usability Testing",
-      "A/B Testing",
-      "Participatory Design Workshops",
-    ],
-  },
-  {
-    title: "Programming & Development - Mobile & Web",
-    icon: "code",
-    items: ["Angular", "ReactNative", "HTML", "CSS", "JS"],
-  },
-] as const

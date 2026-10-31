@@ -1,7 +1,7 @@
 import { CodeXml, HeartPulse, Rocket, ScanSearch } from "lucide-react"
+import Image from "next/image"
 
 import { BlurFade } from "@/components/ui/blur-fade"
-import { BorderBeam } from "@/components/ui/border-beam"
 import { Iphone } from "@/components/ui/iphone"
 import { MagicCard } from "@/components/ui/magic-card"
 import { cn } from "@/lib/utils"
@@ -20,12 +20,17 @@ function Media({ media }: { media: Project["media"] }) {
       return (
         <div className="flex aspect-[4/3] flex-col items-center justify-center gap-10 bg-linear-to-br from-[#4f7cf0] via-[#4a97d6] to-[#3fb08f] p-10 md:aspect-[16/11]">
           {media.logos.map((logo, i) => (
-            <img
+            <div
               key={logo}
-              src={logo}
-              alt=""
-              className={cn("object-contain", i === 0 ? "w-3/5 max-w-md" : "w-1/5 max-w-[140px]")}
-            />
+              className={cn(
+                "relative",
+                i === 0
+                  ? "aspect-[1024/448] w-3/5 max-w-md"
+                  : "aspect-[683/292] w-1/5 max-w-[140px]"
+              )}
+            >
+              <Image src={logo} alt="" fill unoptimized className="object-contain" />
+            </div>
           ))}
         </div>
       )
@@ -52,16 +57,20 @@ function Media({ media }: { media: Project["media"] }) {
       )
     case "image":
       return (
-        <img
-          src={media.src}
-          alt={media.alt}
-          className="aspect-[4/3] w-full bg-white object-cover md:aspect-[16/11]"
-        />
+        <div className="relative aspect-[4/3] w-full bg-white md:aspect-[16/11]">
+          <Image
+            src={media.src}
+            alt={media.alt}
+            fill
+            unoptimized
+            className={media.contain ? "object-contain" : "object-cover"}
+          />
+        </div>
       )
   }
 }
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({ project, showWorkIntro = false }: { project: Project; showWorkIntro?: boolean }) {
   const status = statusStyles[project.status.type]
   const StatusIcon = status.icon
   const meta = [
@@ -73,9 +82,17 @@ function ProjectCard({ project }: { project: Project }) {
 
   return (
     <article className="border-t border-white/10 py-16 md:py-24">
+      {showWorkIntro && (
+        <div className="mb-10">
+          <p className="text-[11px] font-medium tracking-[0.16em] text-neutral-500">WORK</p>
+          <p className="mt-3 text-sm text-neutral-400 sm:text-base">
+            A selection of research and product design projects.
+          </p>
+        </div>
+      )}
       <BlurFade inView>
         <p className="text-sm text-neutral-400">{project.year}</p>
-        <h3 className="mt-3 max-w-4xl text-3xl leading-tight font-medium tracking-tight text-balance text-white md:text-[2.6rem]">
+        <h3 className="mt-3 max-w-4xl text-2xl leading-tight font-medium tracking-tight text-balance text-white md:text-[2.25rem]">
           {project.title}
         </h3>
       </BlurFade>
@@ -103,7 +120,7 @@ function ProjectCard({ project }: { project: Project }) {
       </BlurFade>
 
       <BlurFade inView delay={0.15}>
-        <div className="mt-6 max-w-4xl space-y-3 text-[15px] leading-relaxed text-neutral-300">
+        <div className="mt-6 max-w-4xl space-y-3 text-[15px] leading-relaxed text-neutral-400">
           {project.description.map((p) => (
             <p key={p}>{p}</p>
           ))}
@@ -128,9 +145,6 @@ function ProjectCard({ project }: { project: Project }) {
         >
           <div className="relative overflow-hidden rounded-[inherit]">
             <Media media={project.media} />
-            {project.status.type === "development" && (
-              <BorderBeam size={260} duration={9} colorFrom="#4C8DFF" colorTo="#a3e635" />
-            )}
           </div>
         </MagicCard>
       </BlurFade>
@@ -140,9 +154,9 @@ function ProjectCard({ project }: { project: Project }) {
 
 export function Projects() {
   return (
-    <section id="work" className="mx-auto mt-20 max-w-6xl px-4 md:px-6">
-      {projects.map((project) => (
-        <ProjectCard key={project.title} project={project} />
+    <section id="work" className="mx-auto mt-4 max-w-6xl px-4 md:px-6">
+      {projects.map((project, index) => (
+        <ProjectCard key={project.title} project={project} showWorkIntro={index === 0} />
       ))}
     </section>
   )
