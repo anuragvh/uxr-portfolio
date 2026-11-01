@@ -49,7 +49,10 @@ export function Contact() {
             </a>
           </div>
 
-          <div id="booking-calendar" className="scroll-mt-8 lg:mt-3">
+          <div
+            id="booking-calendar"
+            className="scroll-mt-8 rounded-lg border border-neutral-300 bg-[#E1E4E8] p-4 lg:mt-3 dark:border-white/15 dark:bg-[#262728]"
+          >
             <CalEmbed />
           </div>
         </div>

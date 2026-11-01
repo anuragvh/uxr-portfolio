@@ -28,7 +28,7 @@ export function CalEmbed() {
 
   return (
     <>
-      <div id="cal-inline" className="w-full" />
+      <div id="cal-inline" className="cal-embed-frame w-full" />
       <Script
         id="cal-embed"
         strategy="afterInteractive"

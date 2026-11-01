@@ -243,6 +243,21 @@ html.light [class~="bg-white/[0.04]"] {
   );
 }
 
+.cal-embed-frame {
+  border-radius: 0.5rem;
+  outline: 1px solid #d4d4d8;
+  outline-offset: -1px;
+  overflow: hidden;
+}
+
+html.dark .cal-embed-frame {
+  outline-color: rgb(255 255 255 / 15%);
+}
+
+.cal-embed-frame iframe {
+  margin-bottom: -80px !important;
+}
+
 html.light .contact-section__backdrop {
   background: none;
 }
