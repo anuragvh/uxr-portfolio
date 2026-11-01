@@ -100,9 +100,9 @@ export function SiteHeader() {
             aria-label="Toggle light and dark theme"
             title="Toggle light and dark theme"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="flex size-8 items-center justify-center rounded-md border border-white/10 bg-white/[0.06] text-neutral-300 transition-colors hover:text-white"
+            className="group flex size-8 cursor-pointer items-center justify-center rounded-md border border-white/10 bg-white/[0.06] text-neutral-300 transition-colors duration-200 hover:border-white/20 hover:bg-white/10 hover:text-white"
           >
-            <SunMoon className="size-4" />
+            <SunMoon className="size-4 transition-transform duration-300 group-hover:rotate-45" />
           </button>
         </nav>
       </div>

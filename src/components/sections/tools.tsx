@@ -7,15 +7,16 @@ type Tool = {
   name: string
   icon: string
   cropIcon?: boolean
+  invertInDark?: boolean
 }
 
 const tools = [
   { name: "Figma", icon: asset("/images/tool-icons/figma.svg") },
   { name: "VS Code", icon: asset("/images/tool-icons/vscode.svg") },
   { name: "UserZoom", icon: asset("/images/tool-icons/userzoom.svg"), cropIcon: true },
-  { name: "Dovetail", icon: asset("/images/tool-icons/dovetail.svg") },
+  { name: "Dovetail", icon: asset("/images/tool-icons/dovetail.svg"), invertInDark: true },
   { name: "Claude", icon: asset("/images/tool-icons/claude.svg") },
-  { name: "Cursor", icon: asset("/images/tool-icons/cursor.svg") },
+  { name: "Cursor", icon: asset("/images/tool-icons/cursor.svg"), invertInDark: true },
   { name: "Miro", icon: asset("/images/tool-icons/miro.svg") },
   { name: "SurveyMonkey", icon: asset("/images/tool-icons/surveymonkey.svg") },
   { name: "Angular", icon: asset("/images/tool-icons/angular.svg") },
@@ -23,7 +24,7 @@ const tools = [
   { name: "TypeScript", icon: asset("/images/tool-icons/typescript.svg") },
 ] satisfies Tool[]
 
-function ToolTickerItem({ name, icon, cropIcon = false }: Tool) {
+function ToolTickerItem({ name, icon, cropIcon = false, invertInDark = false }: Tool) {
   return (
     <div className="flex shrink-0 items-center gap-3 rounded-md border border-neutral-200 bg-neutral-50 px-3 py-2 dark:border-white/10 dark:bg-white/[0.04]">
       <span className="flex size-7 shrink-0 items-center justify-center overflow-hidden">
@@ -33,7 +34,9 @@ function ToolTickerItem({ name, icon, cropIcon = false }: Tool) {
           aria-hidden="true"
           width={28}
           height={28}
-          className={cropIcon ? "size-7 object-cover object-left" : "size-7 object-contain"}
+          className={`${cropIcon ? "size-7 object-cover object-left" : "size-7 object-contain"} ${
+            invertInDark ? "dark:brightness-0 dark:invert" : ""
+          }`}
         />
       </span>
       <span className="whitespace-nowrap text-sm font-medium text-neutral-700 dark:text-neutral-300">

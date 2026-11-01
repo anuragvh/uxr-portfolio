@@ -24,6 +24,7 @@ export interface Project {
 export const profile = {
   name: "Anurag",
   fullName: "Anurag Harishchandrakar",
+  title: "UX Researcher & Design Engineer",
   location: "Boston, USA",
   timeZone: "America/New_York",
   linkedin: "https://www.linkedin.com/in/anuragvh",

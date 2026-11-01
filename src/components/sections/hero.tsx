@@ -27,10 +27,12 @@ export function Hero() {
         </div>
 
         <div className="flex flex-col">
-          <h1 className="font-hand text-5xl leading-[0.9] tracking-wide text-white md:text-6xl">
+          <h1 className="py-1 font-hand text-5xl leading-[0.9] tracking-wide text-white md:text-6xl">
             {profile.fullName}
           </h1>
-          <p className="mt-0.5 text-base text-neutral-500">UX Researcher</p>
+          <h1 className="py-1 font-hand text-5xl leading-[0.9] tracking-wide text-[#919191] md:text-6xl">
+            {profile.title}
+          </h1>
 
           <p className="mt-6 text-sm leading-relaxed text-neutral-400 sm:text-base">
             <span className="lg:block">
