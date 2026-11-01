@@ -79,13 +79,9 @@ function ProjectCard({ project, showWorkIntro = false }: { project: Project; sho
       {showWorkIntro && (
         <div className="mb-10">
           <p className="text-[11px] font-medium tracking-[0.16em] text-neutral-500">WORK</p>
-          <p className="mt-3 text-sm text-neutral-400 sm:text-base">
-            A selection of research and product design projects.
-          </p>
         </div>
       )}
       <BlurFade inView>
-        <p className="text-sm text-neutral-400">{project.year}</p>
         <h3 className="mt-3 max-w-4xl text-2xl leading-tight font-medium tracking-tight text-balance text-white md:text-[2.25rem]">
           {project.title}
         </h3>

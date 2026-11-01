@@ -1,7 +1,7 @@
 "use client"
 
 import { useSyncExternalStore } from "react"
-import { Clock, MapPin, SunMoon } from "lucide-react"
+import { Clock, Mail, MapPin, SunMoon } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import { LinkedInIcon } from "@/components/icons"
@@ -59,10 +59,16 @@ export function SiteHeader() {
         </div>
 
         <nav className="ml-auto flex items-center gap-5 text-sm text-neutral-400">
-          <a href="#work" className="hidden transition-colors hover:text-white sm:block">
+          <a
+            href="#work"
+            className="hidden transition-colors hover:font-bold hover:text-neutral-900 focus-visible:font-bold focus-visible:text-neutral-900 dark:hover:text-white dark:focus-visible:text-white sm:block"
+          >
             Work
           </a>
-          <a href="#about" className="hidden transition-colors hover:text-white sm:block">
+          <a
+            href="#about"
+            className="hidden transition-colors hover:font-bold hover:text-neutral-900 focus-visible:font-bold focus-visible:text-neutral-900 dark:hover:text-white dark:focus-visible:text-white sm:block"
+          >
             About
           </a>
           <a
@@ -70,9 +76,16 @@ export function SiteHeader() {
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
-            className="transition-colors hover:text-white"
+            className="transition-colors hover:text-neutral-900 focus-visible:text-neutral-900 dark:hover:text-white dark:focus-visible:text-white"
           >
             <LinkedInIcon className="size-4" />
+          </a>
+          <a
+            href="mailto:anuragvh@gmail.com"
+            aria-label="Email Anurag"
+            className="transition-colors hover:text-neutral-900 focus-visible:text-neutral-900 dark:hover:text-white dark:focus-visible:text-white"
+          >
+            <Mail className="size-4" />
           </a>
           <button
             type="button"

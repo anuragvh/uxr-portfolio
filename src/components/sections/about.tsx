@@ -2,32 +2,32 @@ import Image from "next/image"
 
 import { BlurFade } from "@/components/ui/blur-fade"
 import { Tools } from "@/components/sections/tools"
-import { about, asset } from "@/lib/data"
+import { about } from "@/lib/data"
 
 const experience = [
   {
     dates: "2026 – Present",
     role: "UX Researcher",
     company: "UST Global (Contract)",
-    logo: asset("/images/org-logos/ust.svg"),
+    logo: "/images/org-logos/ust.svg",
   },
   {
     dates: "2024 – 2025",
     role: "Design Researcher",
     company: "Indiana CTSI",
-    logo: asset("/images/org-logos/indiana-ctsi.png"),
+    logo: "/images/org-logos/indiana-ctsi.png",
   },
   {
     dates: "2023",
     role: "Product Designer",
     company: "INDYCAR (Co-op)",
-    logo: asset("/images/org-logos/indycar.png"),
+    logo: "/images/org-logos/indycar.png",
   },
   {
     dates: "2019 – 2021",
     role: "Front End Engineer",
     company: "L&T Technology Services Pvt Ltd",
-    logo: asset("/images/org-logos/ltts.svg"),
+    logo: "/images/org-logos/ltts.svg",
   },
 ]
 
@@ -36,26 +36,26 @@ const education = [
     dates: "2026 – Present",
     degree: "Master's in Artificial Intelligence & Machine Learning",
     school: "Indiana Wesleyan University",
-    logo: asset("/images/org-logos/indiana-wesleyan.png"),
+    logo: "/images/org-logos/indiana-wesleyan.png",
   },
   {
     dates: "2022 – 2023",
     degree: "Master's in Human-Computer Interaction",
     school: "Indiana University",
-    logo: asset("/images/org-logos/indiana-university.png"),
+    logo: "/images/org-logos/indiana-university.png",
   },
   {
     dates: "2015 – 2019",
     degree: "Bachelor's in Computer Science Engineering",
     school: "VTU",
-    logo: asset("/images/org-logos/vtu.png"),
+    logo: "/images/org-logos/vtu.png",
   },
 ]
 
 export function About() {
   return (
     <section id="about" className="mx-auto max-w-6xl border-t border-white/10 px-4 py-16 md:px-6 md:py-24">
-      <p className="text-sm text-neutral-400">[01] About Me :)</p>
+      <p className="text-sm text-neutral-400">ABOUT ME</p>
 
       <BlurFade inView>
         <h1 className="mt-8 max-w-4xl text-3xl leading-tight font-medium tracking-tight text-balance text-white md:text-[2.6rem]">
@@ -83,11 +83,11 @@ export function About() {
           className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-80 overflow-hidden lg:block"
         >
           <Image
-            src={asset("/images/experience-mandala.png")}
+            src="/images/experience-mandala.png"
             alt=""
             width={554}
             height={554}
-            className="absolute top-0 left-0 h-full w-auto max-w-none object-contain opacity-90 mix-blend-multiply dark:invert dark:mix-blend-screen"
+            className="absolute top-0 right-[-10.75rem] h-full w-auto max-w-none object-contain opacity-90 mix-blend-multiply dark:invert dark:mix-blend-screen"
           />
         </div>
         <div className="relative z-10">
