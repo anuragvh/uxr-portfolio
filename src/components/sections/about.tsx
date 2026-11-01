@@ -66,7 +66,7 @@ export function About() {
       <div className="mt-12 space-y-8">
         {about.blocks.map((block, i) => (
           <BlurFade key={block} inView delay={0.1 + i * 0.1}>
-            <h2 className="max-w-4xl whitespace-pre-line text-[15px] leading-relaxed text-neutral-400">
+            <h2 className="max-w-4xl whitespace-pre-line text-base leading-relaxed text-neutral-400">
               {block}
             </h2>
           </BlurFade>
