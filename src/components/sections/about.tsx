@@ -85,8 +85,8 @@ export function About() {
           <Image
             src="/images/experience-mandala.png"
             alt=""
-            width={554}
-            height={554}
+            width={768}
+            height={768}
             className="absolute top-0 left-0 h-full w-auto max-w-none object-contain opacity-90 mix-blend-multiply dark:invert dark:mix-blend-screen"
           />
         </div>
