@@ -29,8 +29,8 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/anuragvh",
   avatar: asset("/images/avatar.png"),
   roles: [
-    { title: "Design Researcher @ UST", org: "Elevance Health (Contract)" },
-    { title: "Co-Founder & Design Engineer @", org: "Loading" },
+    { title: "Design Researcher", org: "UST Global (Contract)" },
+    { title: "Founding Design Engineer", org: "Loading..." },
   ],
 }
 

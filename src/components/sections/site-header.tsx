@@ -34,7 +34,7 @@ export function SiteHeader() {
   const { setTheme, theme } = useTheme()
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-black/70 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-background/70 backdrop-blur-md">
       <ScrollProgress className="top-auto bottom-0" />
       <div className="mx-auto flex h-14 max-w-6xl items-center gap-4 px-4 md:px-6">
         <a href="#top" className="font-hand text-3xl tracking-tight text-white">

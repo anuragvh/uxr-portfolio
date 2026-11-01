@@ -32,6 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="bg-background text-foreground">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           {children}
+          <div aria-hidden="true" className="page-fold-glow" style={{ backdropFilter: "blur(8px)" }} />
         </ThemeProvider>
       </body>
     </html>

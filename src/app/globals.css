@@ -133,7 +133,7 @@
 }
 
 .dark {
-  --background: oklch(0 0 0);
+  --background: #090a13;
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -181,6 +181,24 @@
 html.light body {
   background-color: var(--background);
   color: var(--foreground);
+}
+
+.page-fold-glow {
+  position: fixed;
+  z-index: 30;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 6rem;
+  pointer-events: none;
+  -webkit-backdrop-filter: blur(8px);
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    color-mix(in srgb, var(--background) 55%, transparent) 58%,
+    var(--background)
+  );
+  mask-image: linear-gradient(to bottom, transparent, black 68%);
 }
 
 html.light [class~="bg-black"] {
@@ -238,8 +256,8 @@ html.light [class~="bg-white/[0.04]"] {
     rgb(13 15 36 / 20%) 18%,
     rgb(13 15 36 / 38%) 42%,
     rgb(10 11 27 / 74%) 68%,
-    #080912 88%,
-    #080912 100%
+    #090a13 88%,
+    #090a13 100%
   );
 }
 

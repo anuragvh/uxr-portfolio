@@ -4,11 +4,12 @@ import { profile } from "@/lib/data"
 
 export function Hero() {
   const currentRole = profile.roles[0]
+  const upcomingRole = profile.roles[1]
 
   return (
     <section id="top" className="mx-auto max-w-6xl px-4 pt-28 pb-12 md:px-6 md:pt-36">
       <div className="grid gap-6 md:grid-cols-[auto_minmax(0,1fr)] md:gap-10">
-        <div className="relative flex min-h-56 items-start justify-start rounded-2xl bg-black md:min-h-[240px]">
+        <div className="relative flex min-h-56 items-start justify-start rounded-2xl bg-background md:min-h-[240px]">
           <div className="relative size-[188px]">
             <Image
               src={profile.avatar}
@@ -20,7 +21,7 @@ export function Hero() {
             />
             <span
               aria-label="Open to work"
-              className="absolute right-[18px] bottom-[22px] z-10 size-[22px] translate-x-1/4 translate-y-1/4 rounded-full border-8 border-black bg-emerald-400 md:right-[15.5px] md:size-11"
+              className="absolute right-[18px] bottom-[22px] z-10 size-[22px] translate-x-1/4 translate-y-1/4 rounded-full border-8 border-background bg-emerald-400 md:right-[15.5px] md:size-11"
             />
           </div>
         </div>
@@ -42,9 +43,21 @@ export function Hero() {
             </span>
           </p>
 
-          <div className="mt-8">
-            <p className="text-sm font-medium text-white">{currentRole.title}</p>
-            <p className="mt-1 text-sm text-neutral-500">{currentRole.org}</p>
+          <div className="mt-8 flex w-fit max-w-full flex-wrap gap-x-12 gap-y-4 md:gap-x-24">
+            <div>
+              <p className="mb-2 text-[11px] font-medium tracking-[0.16em] text-neutral-500">
+                CURRENT
+              </p>
+              <p className="text-sm font-medium text-white">{currentRole.title}</p>
+              <p className="mt-1 text-sm text-neutral-500">{currentRole.org}</p>
+            </div>
+            <div>
+              <p className="mb-2 text-[11px] font-medium tracking-[0.16em] text-neutral-500">
+                UPCOMING
+              </p>
+              <p className="text-sm font-medium text-white">{upcomingRole.title}</p>
+              <p className="mt-1 text-sm text-neutral-500">{upcomingRole.org}</p>
+            </div>
           </div>
         </div>
       </div>
