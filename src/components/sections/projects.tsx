@@ -110,7 +110,7 @@ function ProjectCard({ project, showWorkIntro = false }: { project: Project; sho
       </BlurFade>
 
       <BlurFade inView delay={0.15}>
-        <div className="mt-6 max-w-4xl space-y-3 text-[15px] leading-relaxed text-neutral-400">
+        <div className="mt-6 max-w-4xl space-y-3 text-base leading-relaxed text-neutral-400">
           {project.description.map((p) => (
             <p key={p}>{p}</p>
           ))}
