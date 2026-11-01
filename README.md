@@ -22,4 +22,4 @@ The static site is generated in `out/`.
 
 ## GitHub Pages
 
-Production builds use `/uxr-portfolio` as the base path. Set `NEXT_PUBLIC_BASE_PATH` at build time to override it when deploying under a different path or a custom domain.
+The GitHub Pages workflow builds with an empty `NEXT_PUBLIC_BASE_PATH` so the site and its assets load from the root of a custom domain. For a project site served from `/<repo-name>`, set `NEXT_PUBLIC_BASE_PATH` to that path at build time instead.
