@@ -21,7 +21,7 @@ export function Contact() {
       <BlurFade inView>
         <div className="relative grid gap-10 pt-16 lg:grid-cols-[268px_minmax(0,1fr)] lg:gap-8">
           <div>
-            <h2 className="font-hand text-5xl leading-[0.9] tracking-wide text-white md:text-6xl">
+            <h2 className="font-hand text-5xl leading-[0.9] tracking-wide text-neutral-900 md:text-6xl dark:text-white">
               Don&apos;t be shy
               <br />
               Say hi :)

@@ -66,7 +66,7 @@ export function About() {
       <div className="mt-12 space-y-8">
         {about.blocks.map((block, i) => (
           <BlurFade key={block} inView delay={0.1 + i * 0.1}>
-            <h2 className="max-w-4xl whitespace-pre-line text-base leading-relaxed text-neutral-400">
+            <h2 className="max-w-5xl whitespace-pre-line text-base leading-relaxed text-neutral-400">
               {block}
             </h2>
           </BlurFade>
@@ -87,7 +87,7 @@ export function About() {
             alt=""
             width={554}
             height={554}
-            className="absolute top-0 right-[-10.75rem] h-full w-auto max-w-none object-contain opacity-90 mix-blend-multiply dark:invert dark:mix-blend-screen"
+            className="absolute top-0 left-0 h-full w-auto max-w-none object-contain opacity-90 mix-blend-multiply dark:invert dark:mix-blend-screen"
           />
         </div>
         <div className="relative z-10">
@@ -114,7 +114,7 @@ export function About() {
                   </div>
                   <div className="min-w-0">
                     <p className="text-sm leading-5 font-medium text-neutral-200">{item.role}</p>
-                    <p className="mt-1 text-sm leading-relaxed text-neutral-400">@ {item.company}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-neutral-400">{item.company}</p>
                   </div>
                 </div>
               </li>

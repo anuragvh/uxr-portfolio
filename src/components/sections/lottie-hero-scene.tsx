@@ -29,7 +29,7 @@ export function LottieHeroScene() {
           aria-label="Walking spider"
         />
       </div>
-      <div className="absolute bottom-[-6px] left-[30%] z-10 w-[16.7%] max-w-[118px]">
+      <div className="absolute bottom-[-6px] left-[calc(42%-8px)] z-10 w-[16.7%] max-w-[118px]">
         <Lottie
           src={asset("/lottie/Death%20Dance.json")}
           loop

@@ -181,6 +181,6 @@ export const projects: Project[] = [
 export const about = {
   intro: "I’m a UX Researcher with a foundation in Front-End Engineering.",
   blocks: [
-    "I started my career as a Front-End Engineer, building web applications and SaaS products on Angular JS & MEAN stack.\nMy transition into UX was driven by a desire to gain deeper product intuition and to craft experiences grounded in user-centric research.",
+    "I started my career as a Front-End Engineer, building web applications and SaaS products on Angular JS & MEAN\u00A0stack.\nMy transition into UX was driven by a desire to gain deeper product intuition and to craft experiences grounded in user-centric research.",
   ],
 }

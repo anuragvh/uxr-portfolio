@@ -262,6 +262,10 @@ html.light .contact-section__backdrop {
   background: none;
 }
 
+html.light .contact-scene__shade {
+  background: none;
+}
+
 .contact-scene__shade {
   background: linear-gradient(
     to bottom,
@@ -273,10 +277,6 @@ html.light .contact-section__backdrop {
 
 html.light .contact-section [class~="text-neutral-500"] {
   color: #737373;
-}
-
-html.light .contact-section h2 {
-  color: #fff;
 }
 
 html.light .contact-section [class~="border-white/10"] {

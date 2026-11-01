@@ -72,6 +72,14 @@ export function SiteHeader() {
             About
           </a>
           <a
+            href="https://drive.google.com/file/d/1KH8RBn2FJNOJA1zKxcwC5lZmJGgpfQqN/view?usp=sharing"
+            target="_blank"
+            rel="noreferrer"
+            className="transition-colors hover:font-bold hover:text-neutral-900 focus-visible:font-bold focus-visible:text-neutral-900 dark:hover:text-white dark:focus-visible:text-white"
+          >
+            Resume
+          </a>
+          <a
             href={profile.linkedin}
             target="_blank"
             rel="noreferrer"
