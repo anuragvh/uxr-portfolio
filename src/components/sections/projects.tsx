@@ -73,12 +73,6 @@ function Media({ media }: { media: Project["media"] }) {
 function ProjectCard({ project, showWorkIntro = false }: { project: Project; showWorkIntro?: boolean }) {
   const status = statusStyles[project.status.type]
   const StatusIcon = status.icon
-  const meta = [
-    ["Role", project.role],
-    ["Scope", project.scope],
-    ["For", project.client],
-    ["Industry", project.industry],
-  ]
 
   return (
     <article className="border-t border-white/10 py-16 md:py-24">
@@ -125,15 +119,6 @@ function ProjectCard({ project, showWorkIntro = false }: { project: Project; sho
             <p key={p}>{p}</p>
           ))}
         </div>
-
-        <dl className="mt-10 grid grid-cols-2 gap-6 text-sm md:grid-cols-4">
-          {meta.map(([label, value]) => (
-            <div key={label}>
-              <dt className="text-neutral-500">{label}</dt>
-              <dd className="mt-2 text-neutral-200">{value}</dd>
-            </div>
-          ))}
-        </dl>
       </BlurFade>
 
       <BlurFade inView delay={0.2}>

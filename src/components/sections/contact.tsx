@@ -1,12 +1,8 @@
-import { ArrowRight } from "lucide-react"
-import Image from "next/image"
-
 import { LinkedInIcon } from "@/components/icons"
 import { CalEmbed } from "@/components/sections/cal-embed"
 import { LottieHeroScene } from "@/components/sections/lottie-hero-scene"
 import { BlurFade } from "@/components/ui/blur-fade"
 import { Particles } from "@/components/ui/particles"
-import { ShimmerButton } from "@/components/ui/shimmer-button"
 import { profile } from "@/lib/data"
 
 export function Contact() {
@@ -25,28 +21,11 @@ export function Contact() {
       <BlurFade inView>
         <div className="relative grid gap-10 pt-16 lg:grid-cols-[268px_minmax(0,1fr)] lg:gap-8">
           <div>
-            <Image
-              src={profile.avatar}
-              alt=""
-              width={64}
-              height={64}
-              unoptimized
-              className="size-16 rounded-full border-2 border-white object-cover"
-            />
-            <h2 className="mt-4 text-3xl leading-[1.08] font-medium tracking-tight text-white">
+            <h2 className="font-hand text-5xl leading-[0.9] tracking-wide text-white md:text-6xl">
               Don&apos;t be shy
               <br />
               Say hi :)
             </h2>
-            <a href="#booking-calendar" className="mt-3 inline-block">
-              <ShimmerButton
-                background="rgba(10,10,10,1)"
-                className="gap-2 px-3 py-2 text-[10px]"
-              >
-                Get in touch
-                <ArrowRight className="size-3" />
-              </ShimmerButton>
-            </a>
           </div>
 
           <div
